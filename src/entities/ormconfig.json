@@ -1,0 +1,13 @@
+[
+  {
+    "name": "default",
+    "type": "postgres",
+    "host": "maglev.proxy.rlwy.net",
+    "port": 33280,
+    "username": "postgres",
+    "password": "YsgOzNJEKrNdCjNopYPMFxrQxnhbFORd",
+    "database": "",
+    "synchronize": false,
+    "entities": ["entities/*.js"]
+  }
+]
