@@ -1,25 +1,25 @@
-import { Column, Entity, Index, OneToMany } from 'typeorm';
-import { Sanpham } from './Sanpham';
+import { Column, Entity, Index, OneToMany } from "typeorm";
+import { Sanpham } from "./Sanpham";
 
-@Index('chuongtrinhkhuyenmai_pk', ['machuongtrinh'], { unique: true })
-@Entity('chuongtrinhkhuyenmai', { schema: 'public' })
+@Index("chuongtrinhkhuyenmai_pk", ["machuongtrinh"], { unique: true })
+@Entity("chuongtrinhkhuyenmai", { schema: "public" })
 export class Chuongtrinhkhuyenmai {
-  @Column('character varying', { primary: true, name: 'machuongtrinh' })
+  @Column("character varying", { primary: true, name: "machuongtrinh" })
   machuongtrinh: string;
 
-  @Column('character varying', { name: 'tenchuongtrinh', nullable: true })
+  @Column("character varying", { name: "tenchuongtrinh", nullable: true })
   tenchuongtrinh: string | null;
 
-  @Column('integer', { name: 'giatrikhuyenmai', nullable: true })
+  @Column("integer", { name: "giatrikhuyenmai", nullable: true })
   giatrikhuyenmai: number | null;
 
-  @Column('character varying', { name: 'donviapdung', nullable: true })
+  @Column("character varying", { name: "donviapdung", nullable: true })
   donviapdung: string | null;
 
-  @Column('date', { name: 'ngaybatdau', nullable: true })
+  @Column("date", { name: "ngaybatdau", nullable: true })
   ngaybatdau: string | null;
 
-  @Column('date', { name: 'ngayketthuc', nullable: true })
+  @Column("date", { name: "ngayketthuc", nullable: true })
   ngayketthuc: string | null;
 
   @OneToMany(() => Sanpham, (sanpham) => sanpham.machuongtrinh)
