@@ -1,6 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductsModule } from './products/products.module';
+import { AuthController } from './controllers/auth.controller';
+import { AuthService } from './services/auth.service';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -15,6 +18,12 @@ import { ProductsModule } from './products/products.module';
       synchronize: false,
     }),
     ProductsModule,
+    JwtModule.register({
+      secret: 'yourSecretKey',
+      signOptions: { expiresIn: '1h' },
+    }),
   ],
+  controllers: [AuthController],
+  providers: [AuthService],
 })
 export class AppModule {}
