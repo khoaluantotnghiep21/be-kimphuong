@@ -5,6 +5,7 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from "typeorm";
 import { Binhluan } from "./Binhluan";
 import { Chitietdonhang } from "./Chitietdonhang";
@@ -23,6 +24,7 @@ import { Thuonghieu } from "./Thuonghieu";
 @Entity("sanpham", { schema: "public" })
 export class Sanpham {
   @Column("uuid", { primary: true, name: "id" })
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column("character varying", { name: "masanpham", unique: true })

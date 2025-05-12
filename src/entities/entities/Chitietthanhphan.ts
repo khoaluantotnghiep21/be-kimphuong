@@ -11,7 +11,7 @@ export class Chitietthanhphan {
   @Column("character varying", { primary: true, name: "mathanhphan" })
   mathanhphan: string;
 
-  @Column("real", { name: "hamluong", nullable: true, precision: 24 })
+  @Column("real", { name: "hamluong", nullable: true })
   hamluong: number | null;
 
   @ManyToOne(() => Thanhphan, (thanhphan) => thanhphan.chitietthanhphans, {
